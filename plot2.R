@@ -1,7 +1,7 @@
 
 
 
-## This script will solve assignment 1
+## This script will solve assignment 1B
 plotAssignment1B <- function() {    
     library(data.table)
     print("loading data...")
@@ -13,6 +13,7 @@ plotAssignment1B <- function() {
     # parse important numeric column
     dt$Global_active_power <- as.numeric(dt$Global_active_power)
     
+    # STEP 2: PLOT
     png("plot2.png", width=480, height=480)    
     plot(strptime(paste(dt$Date, dt$Time), "%d/%m/%Y %H:%M:%S"), 
          dt$Global_active_power, type="n",

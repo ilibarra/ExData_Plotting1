@@ -1,11 +1,14 @@
 
-# X are time series, Y are values
+# This method receives two vectors, x and y, and plots them into
+# a line plot. If newplot=FALSE, new lines are added to
+# the current plot
 plotTimeSeries <- function(x, y, ylab="Y", xlab="X", col="black",
                            newplot=TRUE) {
     if(newplot)
         plot(x, y, type="n", ylab=ylab, xlab=xlab)
     lines(x, y, col=col)
 }
+
 plotAssignment1D <- function(){
     library(data.table)
     print("loading data...")
@@ -19,6 +22,8 @@ plotAssignment1D <- function(){
     png("plot4.png", width=480, height=480)    
     par(mfrow=c(2,2))
     timeSeries <- strptime(paste(dt$Date, dt$Time), "%d/%m/%Y %H:%M:%S")
+    
+    # STEP 2: PLOT
     # 1
     plotTimeSeries(timeSeries, dt$Global_active_power,
                    ylab="Global Active Power", xlab="")

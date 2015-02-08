@@ -11,6 +11,7 @@ plotAssignment1C <- function(){
     # parse important numeric column
     dt$Global_active_power <- as.numeric(dt$Global_active_power)
     
+    # STEP 2: PLOT
     timeSeries <- strptime(paste(dt$Date, dt$Time), "%d/%m/%Y %H:%M:%S")
     png("plot3.png", width=480, height=480)    
     plot(timeSeries, dt$Sub_metering_1, type="n", ylab="Energy sub metering", xlab="")
