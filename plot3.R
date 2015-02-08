@@ -8,8 +8,6 @@ plotAssignment1C <- function(){
     # filter by dates
     dt <- subset(dt, as.Date(dt$Date, format="%d/%m/%Y") >= as.Date("2007-02-01"))
     dt <- subset(dt, as.Date(dt$Date, format="%d/%m/%Y") <= as.Date("2007-02-02"))  
-    # parse important numeric column
-    dt$Global_active_power <- as.numeric(dt$Global_active_power)
     
     # STEP 2: PLOT
     timeSeries <- strptime(paste(dt$Date, dt$Time), "%d/%m/%Y %H:%M:%S")
